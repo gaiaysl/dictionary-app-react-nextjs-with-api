@@ -1,7 +1,25 @@
+
+.mean {
+   background-color: #726d96;
+    margin: 8px;
+    border-radius: 6px;
+    padding: 8px;
+    font-style: italic;
+}
+.audio{
+    background-color:#fff;
+    border-radius: 10px;
+}
 .meanings {
     display: flex;
     flex-direction: column;
     overflow-y: scroll;
-    scrollbar-width: thin;
-
 }
+.meanings::-webkit-scrollbar {
+    display: none;
+}
+.subTitle{
+    font-weight: lighter;
+    font-style: italic;
+}
+

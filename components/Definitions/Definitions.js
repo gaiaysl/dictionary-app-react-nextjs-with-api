@@ -6,14 +6,14 @@ const Definitions = ({word, category, meanings,LightMode}) => {
 
     return  <div className={styles.meanings}>
 
-        <div className={styles.audio}>
+        <div >
         {meanings[0] && word && category === "en" && (
             <audio
-                style={{ backgroundColor: "#fff", borderRadius: 10 }}
+                className={styles.audio}
                 src={meanings[0].phonetics[0] && meanings[0].phonetics[0].audio}
                 controls
             >
-                Your browser does not support the audio element.
+                <p >Your browser does not support the audio element.</p>
             </audio>
         )}
         </div>
@@ -23,23 +23,20 @@ const Definitions = ({word, category, meanings,LightMode}) => {
                     meanings.map((mean)=> mean.meanings.map((item)=>(
                             item.definitions.map((def) =>(
                                 <div className={styles.mean}
-                                     style={{
-                                         backgroundColor: LightMode? "#3b5360" : "white",
-                                         color: LightMode ? "white" : "black",
-                                     }}
                                 >
-                                    <b>{def.definition}</b>
-                                    <hr style={{backgroundColor: "black", width:"100%" }}/>
+
+                                    <p>{def.definition}</p>
+                                    <hr />
                                     {def.example && (
-                                        <span>
+                                        <div >
                                         <b>Example :</b> {def.example}
-                                      </span>
+                                      </div>
                                         )}
                                     {def.synonyms && (
-                                        <span>
+                                        <div>
                                                 <b>synonyms : </b>
                                             {def.synonyms.map((s)=>`${s},`)}
-                                            </span>
+                                            </div>
                                     )}
                                 </div>
                             ))
