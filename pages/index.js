@@ -1,11 +1,13 @@
-import React from 'react';
+import React from 'react'
+import Api from '../components/Api'
 
-const Homepage = () => {
-    return (
-        <div>
-            
-        </div>
-    );
-};
+const index = () => {
+  return (
+    <div >
+       
+        <Api/>
+    </div>
+  )
+}
 
-export default Homepage;
+export default index

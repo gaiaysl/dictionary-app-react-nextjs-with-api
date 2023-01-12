@@ -1,11 +1,10 @@
-import App from "../components/App"
-import "../styles/app.css";
-function HomePage(){
-    return(
-        <div>
-            <App />
-        </div>
-    )
-}
+import {ThemeProvider} from 'next-themes'
 
-export default HomePage;
+import "../styles/globals.css";
+export default function App({ Component, pageProps }) {
+    return <ThemeProvider attribute='class'>
+    
+    <Component {...pageProps} />
+  </ThemeProvider>
+  
+  }

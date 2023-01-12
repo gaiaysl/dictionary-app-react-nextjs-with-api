@@ -1,15 +1,13 @@
-import React from "react";
-import styles from "../Definitions/Definitions.module.css"
 
-const Definitions = ({word, category, meanings,LightMode}) => {
+const Definitions = ({word, category, meanings}) => {
 
 
-    return  <div className={styles.meanings}>
+    return  <div className=" flex flex-col justify-center gap-y-2  " >
 
-        <div >
+        <div className=" mx-auto " >
         {meanings[0] && word && category === "en" && (
             <audio
-                className={styles.audio}
+                className=""
                 src={meanings[0].phonetics[0] && meanings[0].phonetics[0].audio}
                 controls
             >
@@ -18,11 +16,16 @@ const Definitions = ({word, category, meanings,LightMode}) => {
         )}
         </div>
 
-            {word===""?(<span className={styles.subTitle}>Start by typing a word in search</span>
+            {word===""?(<span >Start by typing a word in search</span>
                 ):(
                     meanings.map((mean)=> mean.meanings.map((item)=>(
                             item.definitions.map((def) =>(
-                                <div className={styles.mean}
+                                <div className="
+                               
+                                bg-gray-100 rounded-2xl p-4
+                                 backdrop-blur-2xl py-3 mb-1
+                                shadow-lg shadow-gray/50 hover:drop-shadow-2xl
+                                 transition-all ease-in-out duration-400"
                                 >
 
                                     <p>{def.definition}</p>
@@ -44,7 +47,7 @@ const Definitions = ({word, category, meanings,LightMode}) => {
                 )}
 
         </div>;
-
+        
 
 };
 export default Definitions;
