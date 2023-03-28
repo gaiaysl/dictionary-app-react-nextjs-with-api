@@ -4,7 +4,6 @@ import Api from '../components/Api'
 const index = () => {
   return (
     <div >
-       
         <Api/>
     </div>
   )

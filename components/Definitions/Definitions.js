@@ -2,12 +2,12 @@
 const Definitions = ({word, category, meanings}) => {
 
 
-    return  <div className=" flex flex-col justify-center gap-y-2  " >
+    return  <div className=" flex flex-col justify-center gap-y-3 text-black dark:text-white    " >
 
-        <div className=" mx-auto " >
+        <div className=" mx-auto gap-y-2 " >
         {meanings[0] && word && category === "en" && (
             <audio
-                className=""
+                className="mb-10"
                 src={meanings[0].phonetics[0] && meanings[0].phonetics[0].audio}
                 controls
             >
@@ -16,27 +16,27 @@ const Definitions = ({word, category, meanings}) => {
         )}
         </div>
 
-            {word===""?(<span >Start by typing a word in search</span>
+            {word===""?(<div className=" mx-auto" >Start by typing a word in search</div>
                 ):(
                     meanings.map((mean)=> mean.meanings.map((item)=>(
                             item.definitions.map((def) =>(
                                 <div className="
-                               
-                                bg-gray-100 rounded-2xl p-4
-                                 backdrop-blur-2xl py-3 mb-1
+                               mx-auto max-w-4xl w-full
+                                bg-purple-300 dark:bg-slate-600 rounded-2xl p-4
+                                  py-3 mb-1
                                 shadow-lg shadow-gray/50 hover:drop-shadow-2xl
-                                 transition-all ease-in-out duration-400"
+                                 transition-all ease-in-out duration-400  "
                                 >
 
-                                    <p>{def.definition}</p>
+                                    <p className="mx-auto  ">{def.definition}</p>
                                     <hr />
                                     {def.example && (
-                                        <div >
+                                        <div className="text-center" >
                                         <b>Example :</b> {def.example}
                                       </div>
                                         )}
                                     {def.synonyms && (
-                                        <div>
+                                        <div > 
                                                 <b>synonyms : </b>
                                             {def.synonyms.map((s)=>`${s},`)}
                                             </div>

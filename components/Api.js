@@ -5,6 +5,7 @@ import {useEffect, useState} from "react";
 import Header from "./Header/Header"
 import Definitions from "./Definitions/Definitions";
 import DarkMode from '../components/DarkMode'
+import Content from "./Content/Content";
 
 
 
@@ -39,32 +40,31 @@ function Api(){
     }, [word, category])
 
     return (
-        <div className=""
-           
-
-        >
-               <DarkMode/>
-
-
-             
-                
-                <Header
-                    category={category}
+     <div >
+         <div className="mx-auto  ">
+                <Header word={word}/>
+                </div>
+                <div className=" h-44 mx-auto flex flex-col justify-center items-center">
+                  <Content
+              word ={word} 
+              setWord={setWord}
+              category={category}
                     setCategory={setCategory}
-                    word ={word}
-                    setWord={setWord}
-
-                />
+                   
+              />
+              </div>
+              <div>
                 {meanings &&(
                     <Definitions
                         word={word}
                         meanings={meanings}
                         category={category}
-                        LightMode={LightMode}
+                        
                     />
                     )}
                 
-        </div>
+                </div>
+                </div>
     );
 }
 
