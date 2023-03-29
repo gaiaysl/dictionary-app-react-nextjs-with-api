@@ -21,7 +21,7 @@ const Definitions = ({word, category, meanings}) => {
                     meanings.map((mean)=> mean.meanings.map((item)=>(
                             item.definitions.map((def) =>(
                                 <div className="
-                               mx-auto max-w-4xl w-full
+                               mx-auto sm:max-w-4xl sm:w-full max-w-xl w-full
                                 bg-purple-300 dark:bg-slate-600 rounded-2xl p-4
                                   py-3 mb-1
                                 shadow-lg shadow-gray/50 hover:drop-shadow-2xl
